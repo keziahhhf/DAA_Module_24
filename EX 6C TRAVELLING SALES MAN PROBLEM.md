@@ -1,5 +1,5 @@
 # EX 6C TRAVELLING SALES MAN PROBLEM
-## DATE:
+## DATE: 17/5/25
 ## AIM:
 To Solve Travelling Sales man Problem for the following graph.
 
@@ -8,11 +8,16 @@ To Solve Travelling Sales man Problem for the following graph.
 
 
 ## Algorithm
-1. 
-2. 
-3. 
-4.  
-5.   
+
+1.Take the cost matrix that shows the cost between every pair of cities.
+
+2.Generate all possible orders (permutations) in which the cities can be visited.
+
+3.For each order, calculate the total travel cost, including returning to the starting city.
+
+4.Keep track of the minimum total cost found so far.
+
+5.After checking all possible orders, return the minimum cost as the final answer.
 
 ## Program:
 ```
@@ -20,13 +25,22 @@ To Solve Travelling Sales man Problem for the following graph.
 To implement the program for TSP.
 
 
-Developed by: 
-Register Number:  
+Developed by: Keziah.F
+Register Number: 212223040094 
 */
+```
+```
+def tsp_cost(tsp):
+    return min(sum(tsp[i][j] for i, j in zip(path, path[1:] + path[:1])) for path in permutations(range(len(tsp))))
+
+from itertools import permutations
+tsp = [[-1, 30, 25, 10], [15, -1, 20, 40], [10, 20, -1, 25], [30, 10, 20, -1]]
+print("Minimum Cost is :",tsp_cost(tsp))
 ```
 
 ## Output:
 
+![image](https://github.com/user-attachments/assets/4da088b7-98a1-4dae-819b-3fae9ab54cdd)
 
 
 ## Result:
